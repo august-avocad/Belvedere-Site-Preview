@@ -313,6 +313,9 @@ a:has(.special-card) {
   background-size: 18%;
   background-position: right bottom;
 }
+.link-appearance-text {
+  color: var(--logo-tan);
+}
 
 /* room rules */
 #room-details {
