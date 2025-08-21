@@ -15,6 +15,7 @@
 
 */
 
+/* global rules */
 :root {
   --logo-tan: #E0C398;
   --shadow-main: #00000070;
@@ -123,27 +124,11 @@ footer {
   color: white;
   padding: 1em;
 }
-footer > div {
-  display: flex;
-  width: 100%;
-  padding: 1% 15%;
-}
-footer > div > div {
-  display: block;
-  width: 50%;
-}
-#footer-awards > img {
-  margin-right: 1.4vw;
-}
-#footer-contact > div {
-  justify-content: end;
-  margin-right: 4.2vw;
-}
-#footer-contact > div > a {
-  margin-bottom: 1vw;
+#centered-footer-content {
+  padding: 1%;
 }
 #social-links {
-  margin-bottom: 1.8em;
+  margin-bottom: 1em;
 }
 .footer-icon {
   font-size: 2vw;
@@ -165,8 +150,11 @@ footer > div > div {
 .tripadvisor-custom-icon:hover {
   background-color: var(--logo-tan);
 }
-footer > a {
-  margin-left: auto;
+#footer-contact > div > a {
+  margin-bottom: 1vw;
+}
+#footer-contact > div > a:last-child {
+  margin-bottom: 0;
 }
 
 /* text with image pairs */
@@ -243,13 +231,11 @@ a:has(.special-card) {
   position: absolute;
   top: 0px;
   left: 0px;
-  right: -10px;
-  bottom: 13px;
+  right: 0px;
+  bottom: 0px;
   background-image: url("boxwood decal small dark.png");
   background-repeat: no-repeat;
   background-size: 25%;
-  transform: rotate(-10deg);
-  transform-origin: right bottom;
   background-position: right bottom;
 }
 .image-over-text-card .back-card-text {
