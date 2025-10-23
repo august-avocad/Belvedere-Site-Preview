@@ -387,7 +387,7 @@ a:has(.special-card) {
 
 /* carousel rules */
 #carousel, #images, .carousel-img {
-  max-height: 66vw;
+  max-height: calc(min(66vw, 100vh));
 }
 .carousel-control-prev-icon, .carousel-control-next-icon {
   width: 2vw;
