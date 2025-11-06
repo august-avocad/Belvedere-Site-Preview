@@ -311,10 +311,6 @@ a:has(.special-card) {
 }
 
 /* room rules */
-#room-details {
-  width: 70%;
-  margin-left: 15%;
-}
 #room-details > h1 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -421,9 +417,6 @@ a:has(.special-card) {
 }
 
 /* google forms rules */
-#content-wraper {
-  margin-top: 6.25vw;
-}
 #forms {
   width: 35vw;
   height: 55vw;
