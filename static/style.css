@@ -272,6 +272,13 @@ a:has(.special-card) {
   height: 100vh;
   object-fit: cover;
 }
+.centered-content-margined {
+  width: 70%;
+  margin-left: 15%;
+}
+.start-below-header {
+  margin-top: 6.25vw;
+}
 .width-50 {
   width: 50vw;
 }
