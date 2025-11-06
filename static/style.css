@@ -11,6 +11,7 @@
 * room rules
 * icon design rules
 * carousel rules
+* accordion rules
 * google forms rules
 
 */
@@ -196,7 +197,7 @@ footer {
   text-align: center;
   padding: 2.5vw 0;
 }
-.text-over-image h4::before, .text-over-image h4::after {
+.text-over-image h4::before, .text-over-image h4::after { /* coppied to accordion h4 */
   content: '';
   display: inline-block;
   vertical-align: middle;
@@ -208,7 +209,7 @@ footer {
   filter: invert(100%);
   margin: 0 0.5em;
 }
-.text-over-image h4::before {
+.text-over-image h4::before { /* coppied to accordion h4 */
   transform: scaleX(-1);
   transform-origin: center;
 }
@@ -418,6 +419,70 @@ a:has(.special-card) {
 #play-pause > svg {
   width: 4vw;
   height: 2.5vw;
+}
+
+/* accordion rules */
+.accordion {
+  --bs-accordion-bg: none;
+  --bs-accordion-color: white;
+  --bs-accordion-border-color: var(--background-dark);
+
+  --bs-accordion-btn-bg: var(--off-black);
+  --bs-accordion-btn-color: var(--bs-accordion-color);
+  --bs-accordion-btn-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+  --bs-accordion-active-bg: var(--bs-accordion-btn-bg);
+  --bs-accordion-active-color: var(--logo-tan);
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+  --bs-accordion-border-radius: 0;
+  --bs-accordion-inner-border-radius: 0;
+  --bs-accordion-btn-focus-box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+.accordion-item, .accordion>h4 {
+  margin-bottom: calc(.4*min(15vh, 30vw));
+  border: none;
+}
+.accordion>h4 {
+  font-weight: normal;
+}
+.accordion h4 button {
+  height: min(15vh, 30vw);
+  font-size: var(--sub-heading-size);
+  font-weight: bold;
+  border-radius: 7px !important;
+}
+.accordion h4 button::before, .accordion>h4::after { /* taken from text over image h4 */
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.5em; /* makes same as line height */
+  width: 1.6em; /* this needs to change each time the image does */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('boxwood decal small dark.png');
+  filter: invert(100%);
+  margin: 0 0.5em;
+}
+.accordion h4 button::before {
+  transform: scaleX(-1);
+  transform-origin: center;
+}
+.accordion h4 button::after {
+  margin: 0 0.5em 0 auto;
+}
+.accordion h4 button:not(.collapsed) {
+  border-radius: 7px 7px 0 0 !important;
+}
+.accordion-collapse {
+  border-radius: 0 0 7px 7px !important;
+}
+.accordion-body {
+  margin: 0 !important;
+  border-radius: 0 0 7px 7px !important;
+}
+.accordion-body ul {
+  list-style: disc;
 }
 
 /* google forms rules */
