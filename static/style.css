@@ -25,6 +25,9 @@
   --sub-heading-size: 1.32vw;
 }
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: var(--background-dark);
   font-family: "Thasadith", sans-serif;
   font-optical-sizing: auto;
@@ -123,6 +126,7 @@ footer {
   background: var(--off-black);
   color: white;
   padding: 1em;
+  margin-top: auto;
 }
 #centered-footer-content {
   padding: 1%;
