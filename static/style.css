@@ -50,7 +50,6 @@ h4 {
   font-size: var(--sub-heading-size);
 }
 ul {
-  list-style: none;
   color: white;
 }
 a, a:not([href]):not([tabindex]) {
@@ -290,6 +289,9 @@ a:has(.special-card) {
 .width-50 {
   width: 50vw;
 }
+.list-no-bullets {
+  list-style: none;
+}
 .emphasis-text {
   position: relative;
   padding: 1em 1.4em;
@@ -480,9 +482,6 @@ a:has(.special-card) {
 .accordion-body {
   margin: 0 !important;
   border-radius: 0 0 7px 7px !important;
-}
-.accordion-body ul {
-  list-style: disc;
 }
 
 /* google forms rules */
