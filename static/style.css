@@ -293,9 +293,11 @@ a:has(.special-card) {
   position: relative;
   padding: 1em 1.4em;
   margin: 1em 0;
+  border-radius: 2px;
   z-index: 5;
+  background-color: var(--off-black);
 }
-.emphasis-text::before, .emphasis-text::after {
+.emphasis-text::after {
   content: "";
   position: absolute;
   top: 0px;
@@ -303,11 +305,6 @@ a:has(.special-card) {
   right: 0px;
   bottom: 0px;
   z-index: -1;
-}
-.emphasis-text::before {
-  background-color: var(--off-black);
-}
-.emphasis-text::after {
   background-image: url("boxwood decal small dark.png");
   background-repeat: no-repeat;
   background-size: 18%;
