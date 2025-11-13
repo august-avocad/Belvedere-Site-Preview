@@ -223,16 +223,21 @@ a:has(.special-card) {
 }
 .image-over-text-card {
   position: relative;
+  padding: 0 !important;
 }
-.image-over-text-card > img {
-  height: 70%;
+.image-over-text-card .image-card {
   width: 94%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
   position: absolute;
   left: 6%;
-  border-radius: 2px;
-
-  object-fit: cover;
   z-index: 5;
+  border-radius: 2px;
+}
+.image-over-text-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .image-over-text-card > .back-card {
   height: 88%;
@@ -241,8 +246,10 @@ a:has(.special-card) {
   top: 12%;
   border-radius: 2px;
 
-  /* image height - back card top */
-  padding-top: 58%;
+  /* image height - back card top + 6% actual spacing */
+  padding-top: calc(94% * 2/3 - 6%);
+  /* adjust for back card top + 6% actual spacing */
+  padding-bottom: 18%;
   background: var(--off-black);
 }
 .image-over-text-card > .back-card::before {
@@ -260,18 +267,12 @@ a:has(.special-card) {
 .image-over-text-card .back-card-text {
   position: relative;
   z-index: 4;
+  padding-left: 10%;
+  padding-right: 6%;
 }
 .image-over-text-card h4 {
   margin: 0;
-  /* (.back-card-text width - 20vw) / 3  */
-  /* given that card width and font sizes use vw this just works™ */
-  padding-bottom: calc((100% - 20vw) / 3);
-  padding-right: 6%;
-  padding-left: 10%;
-  font-size: 1.32vw;
-}
-.image-over-text-card span {
-  padding: 0 6% 0 10%;
+  padding-bottom: 6%; /* half of back card top */
 }
 
 /* other generic reusable classes */
