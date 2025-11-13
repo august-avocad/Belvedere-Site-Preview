@@ -288,6 +288,9 @@ a:has(.special-card) {
 .start-below-header {
   margin-top: 6.25vw;
 }
+.space-before-footer {
+  margin-bottom: 5rem;
+}
 .width-50 {
   width: 50vw;
 }
