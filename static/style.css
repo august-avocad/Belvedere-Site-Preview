@@ -219,40 +219,39 @@ a:has(.special-card) {
 }
 .special-card {
   width: 25vw;
-  height: 23vw;
 }
-.image-over-text-card {
-  position: relative;
-  padding: 0 !important;
-}
-.image-over-text-card .image-card {
-  width: 94%;
+.image-over-text-card > .image-card {
   aspect-ratio: 3 / 2;
   overflow: hidden;
-  position: absolute;
-  left: 6%;
-  z-index: 5;
-  border-radius: 2px;
+
+  position: relative;
+  padding-left: 6%;
 }
-.image-over-text-card img {
+.image-over-text-card > .image-card > img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-radius: 2px;
 }
-.image-over-text-card > .back-card {
-  height: 88%;
+.image-over-text-card > .image-card::before {
+  content: "";
+  position: absolute;
+  top: calc(12% * 3/2);
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+  background: var(--off-black);
+  border-radius: 2px 0;
+}
+.image-over-text-card > .back-card-text {
   width: 94%;
   position: relative;
-  top: 12%;
-  border-radius: 2px;
-
-  /* image height - back card top + 6% actual spacing */
-  padding-top: calc(94% * 2/3 - 6%);
-  /* adjust for back card top + 6% actual spacing */
-  padding-bottom: 18%;
+  padding: 6% 6% 6% 9%;
+  border-radius: 0 0 2px 2px;
   background: var(--off-black);
 }
-.image-over-text-card > .back-card::before {
+.image-over-text-card > .back-card-text::before {
   content: "";
   position: absolute;
   top: 0px;
@@ -264,15 +263,13 @@ a:has(.special-card) {
   background-size: 25%;
   background-position: right bottom;
 }
-.image-over-text-card .back-card-text {
+.image-over-text-card > .back-card-text > * {
   position: relative;
-  z-index: 4;
-  padding-left: 10%;
-  padding-right: 6%;
+  z-index: 2;
 }
 .image-over-text-card h4 {
   margin: 0;
-  padding-bottom: 6%; /* half of back card top */
+  padding-bottom: 6%; /* matching .back-card-text padding */
 }
 
 /* other generic reusable classes */
