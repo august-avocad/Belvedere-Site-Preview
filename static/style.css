@@ -8,6 +8,7 @@
   * text over image
   * image over text card
 * other generic reusable classes
+* specials page rules
 * room rules
 * icon design rules
 * carousel rules
@@ -214,10 +215,10 @@ footer {
 }
 
   /* image over text card */
-a:has(.special-card) {
+a:has(.special-card) { /* for index page only */
   margin: 0 2vw;
 }
-.special-card {
+.special-card { /* for index page only */
   width: 25vw;
 }
 .image-over-text-card > .image-card {
@@ -317,6 +318,20 @@ a:has(.special-card) {
 }
 .link-appearance-text {
   color: var(--logo-tan);
+}
+
+/* specials page rules */
+.grid-sizer, .special, .package {
+  width: 47.5%;
+}
+.special, .package {
+  margin-bottom: 5%;
+}
+.gutter-sizer {
+  width: 5%;
+}
+.specials-grid {
+  position: relative;
 }
 
 /* room rules */
