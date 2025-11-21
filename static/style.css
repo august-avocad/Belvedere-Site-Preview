@@ -25,6 +25,7 @@
   --shadow-dark: #000000C3;
   --off-black: #272727;
   --background-dark: #131313;
+  --header-height: 6.25vw;
   --sub-heading-size: 1.32vw;
 }
 body {
@@ -77,7 +78,7 @@ header {
   background: var(--shadow-main);
 }
 #logo {
-  height: 4.25vw;
+  height: calc(var(--header-height) - 2vw);
   margin: 1vw;
 }
 .drop-container > a {
@@ -331,7 +332,10 @@ a:has(.special-card) { /* for index page only */
   margin-left: 15%;
 }
 .start-below-header {
-  margin-top: 6.25vw;
+  margin-top: var(--header-height);
+}
+.start-below-header, .start-below-header * {
+  scroll-margin-top: var(--header-height);
 }
 .space-before-footer {
   margin-bottom: 5rem;
