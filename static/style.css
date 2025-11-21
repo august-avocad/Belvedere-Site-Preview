@@ -168,7 +168,7 @@ footer {
 
 /* text with image pairs */
   /* banner (image) with text */
-.banner-with-text {
+.banner-with-text, #index-video-wrapper {
   position: relative;
   z-index: -1;
 }
@@ -186,14 +186,11 @@ footer {
   right: 0;
   background: radial-gradient(ellipse, var(--shadow-main), var(--shadow-dark));
 }
-.banner-with-text > img {
+.banner-with-text > img, #index-video-wrapper > video {
   position: fixed;
-}
-.banner-with-text > img {
   object-fit: cover;
 }
 .banner-with-text > h1 {
-  /* top: calc(min(33vh, 22vw)); */
   position: absolute;
   top: 50%;
   width: 100%;
@@ -268,10 +265,12 @@ a:has(.special-card) { /* for index page only */
   padding-left: 6%;
 }
 .image-over-text-card > .image-card > img {
+  position: relative;
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 2px;
+  z-index: 2;
 }
 .image-over-text-card > .image-card::before {
   content: "";
@@ -280,7 +279,6 @@ a:has(.special-card) { /* for index page only */
   left: 0px;
   right: 0px;
   bottom: 0px;
-  z-index: -1;
   background: var(--off-black);
   border-radius: 2px 0;
 }
@@ -313,7 +311,7 @@ a:has(.special-card) { /* for index page only */
 }
 
 /* other generic reusable classes */
-.big-pic {
+.big-pic, #index-video-wrapper {
   width: 100vw;
   height: 100vh;
   max-height: 66vw;
