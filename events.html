@@ -244,14 +244,18 @@
 <script>
     document.querySelectorAll('.accordion-collapse').forEach(collapseEl => {
         collapseEl.addEventListener('shown.bs.collapse', function () {
-            const header = this.previousElementSibling;
-            const rect = header.getBoundingClientRect();
+            // grab item and bounds
+            const item_header = this.previousElementSibling;
+            const rect = item_header.getBoundingClientRect();
 
-            // calculate if the header is already fully within the viewport
-            const inView = (rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight));
+            // calculate header height
+            const page_header_height = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'))*window.innerWidth/100 || 0;
+
+            // calculate if the header is already fully within the viewport (minus header)
+            const inView = (rect.top >= page_header_height && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight));
 
             if (!inView) {
-                header.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                item_header.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
