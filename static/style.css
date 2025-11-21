@@ -317,6 +317,15 @@ a:has(.special-card) { /* for index page only */
   max-height: 66vw;
   object-fit: cover;
 }
+.big-pic-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, #0000 85%, var(--shadow-dark) 100%);
+}
 .centered-content-margined {
   width: 70%;
   margin-left: 15%;
