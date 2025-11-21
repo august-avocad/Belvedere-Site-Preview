@@ -5,6 +5,7 @@
 * global rules
 * header, reserve, footer rules
 * text with image pairs
+  * banner (image) with text
   * text over image
   * image over text card
 * other generic reusable classes
@@ -166,6 +167,44 @@ footer {
 }
 
 /* text with image pairs */
+  /* banner (image) with text */
+.banner-with-text {
+  position: relative;
+  z-index: -1;
+}
+.banner-with-text, .banner-with-text > img {
+  width: 100vw;
+  height: 66vh;
+  max-height: 44vw;
+}
+.banner-with-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: radial-gradient(ellipse, var(--shadow-main), var(--shadow-dark));
+}
+.banner-with-text > img {
+  position: fixed;
+}
+.banner-with-text > img {
+  object-fit: cover;
+}
+.banner-with-text > h1 {
+  /* top: calc(min(33vh, 22vw)); */
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 5vw;
+  z-index: 5;
+}
+.comes-after-banner {
+  background: var(--background-dark);
+}
+
   /* text over image */
 #inn-and-rest {
   width: 100vw;
@@ -277,6 +316,7 @@ a:has(.special-card) { /* for index page only */
 .big-pic {
   width: 100vw;
   height: 100vh;
+  max-height: 66vw;
   object-fit: cover;
 }
 .centered-content-margined {
