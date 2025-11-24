@@ -8,6 +8,7 @@
   * banner (image) with text
   * text over image
   * image over text card
+  * image-text checkerboard
 * other generic reusable classes
 * specials page rules
 * room rules
@@ -24,7 +25,7 @@
   --shadow-main: #00000070;
   --shadow-dark: #000000C3;
   --off-black: #272727;
-  --background-dark: #131313;
+  --background-dark: #161616;
   --header-height: 6.25vw;
   --sub-heading-size: 1.32vw;
 }
@@ -309,6 +310,39 @@ a:has(.special-card) { /* for index page only */
 .image-over-text-card h4 {
   margin: 0;
   padding-bottom: 6%; /* matching .back-card-text padding */
+}
+
+  /* image-text checkerboard */
+.image-text-checkerboard {
+  display: flex;
+  flex-wrap: wrap;
+}
+.image-text-checkerboard > * {
+  width: 50%;
+}
+.image-text-checkerboard > .checker-text {
+  padding: 0 7vw;
+  line-height: 2;
+  align-content: center;
+  position: relative;
+  z-index: 2;
+}
+.image-text-checkerboard > .checker-text::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-image: url("boxwood decal small dark.png");
+  background-repeat: no-repeat;
+  background-size: 33%;
+  background-position: right bottom;
+  z-index: -1;
+}
+.image-text-checkerboard > .checker-text:nth-child(odd)::before {
+  transform: scaleX(-1);
+  transform-origin: center;
 }
 
 /* other generic reusable classes */
