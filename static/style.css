@@ -323,7 +323,8 @@ a:has(.special-card) { /* for index page only */
 .image-text-checkerboard > .checker-text {
   padding: 0 7vw;
   line-height: 2;
-  align-content: center;
+  display: flex;
+  align-items: center;
   position: relative;
   z-index: 2;
 }
