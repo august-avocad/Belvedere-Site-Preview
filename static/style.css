@@ -319,6 +319,7 @@ a:has(.special-card) { /* for index page only */
 }
 .image-text-checkerboard > * {
   width: 50%;
+  height: var(--checker-height);
 }
 .image-text-checkerboard > .checker-text {
   padding: 0 7vw;
