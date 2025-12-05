@@ -11,6 +11,7 @@
   * image-text checkerboard
 * other generic reusable classes
 * specials page rules
+* embedded menu rules
 * room rules
 * icon design rules
 * carousel rules
@@ -423,6 +424,12 @@ a:has(.special-card) { /* for index page only */
 }
 .specials-grid {
   position: relative;
+}
+
+/* embedded menu rules */
+.embedded-menu {
+  width: 100%;
+  aspect-ratio: 8.5 / 11;
 }
 
 /* room rules */
