@@ -328,7 +328,8 @@ a:has(.special-card) { /* for index page only */
   padding: 0 7vw;
   line-height: 2;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   z-index: 2;
 }
@@ -405,6 +406,9 @@ a:has(.special-card) { /* for index page only */
 }
 .link-appearance-text {
   color: var(--logo-tan);
+}
+.white-hover:hover {
+  color: white;
 }
 
 /* specials page rules */
