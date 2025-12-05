@@ -94,25 +94,29 @@ header {
 .drop-container span {
   font-size: var(--sub-heading-size);
 }
-li.drop-container {
+.drop-container {
   height: 100%;
   display: flex;
   align-items: center;
 }
-li:hover .drop {
-  display: block;
+.drop-container .drop {
   position: absolute;
   top: 100%;
-  padding: 1em;
+  padding: 0 1em;
 
   background: var(--off-black);
   filter: drop-shadow(2px 2px 5px var(--shadow-main));
   color: white;
+
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
-.drop {
-  display: none;
+.drop-container:hover .drop {
+  max-height: 100vh;
+  padding: 1em;
 }
-.drop img {
+.drop-container .drop img {
   width: 24vw;
   height: 13.5vw;
   margin-left: auto;
