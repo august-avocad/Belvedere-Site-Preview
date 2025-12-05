@@ -273,7 +273,10 @@ a:has(.special-card) { /* for index page only */
   position: relative;
   padding-left: 6%;
 }
-.image-over-text-card > .image-card > img {
+.image-over-text-card > .image-card > .zoom-image-wrapper {
+  border-radius: 2px;
+}
+.image-over-text-card > .image-card img {
   position: relative;
   height: 100%;
   width: 100%;
@@ -325,8 +328,8 @@ a:has(.special-card) { /* for index page only */
   flex-wrap: wrap;
 }
 .image-text-checkerboard > * {
-  width: 50%;
-  height: var(--checker-height);
+  width: 50% !important;
+  height: var(--checker-height) !important;
 }
 .image-text-checkerboard > .checker-text {
   padding: 0 7vw;
@@ -370,6 +373,21 @@ a:has(.special-card) { /* for index page only */
   left: 0;
   right: 0;
   background: linear-gradient(to bottom, #0000 85%, var(--shadow-dark) 100%);
+}
+.zoom-image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.zoom-image-wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.zoom-image-trigger:hover .zoom-image-wrapper > img,
+.zoom-image-trigger.zoom-image-wrapper:hover > img {
+  transform: scale(1.05);
 }
 .centered-content-margined {
   width: 70%;
