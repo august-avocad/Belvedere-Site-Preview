@@ -103,11 +103,9 @@ li:hover .drop {
   display: block;
   position: absolute;
   top: 100%;
-  min-height: 22vw;
-  width: 38vw;
   padding: 1em;
 
-  background: var(--shadow-dark);
+  background: var(--off-black);
   color: white;
 }
 .drop {
